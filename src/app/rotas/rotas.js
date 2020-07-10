@@ -1,4 +1,4 @@
-const bd = require('../../config/database');
+const db = require('../../config/database');
 
 module.exports = (app) => {
 
@@ -17,7 +17,7 @@ module.exports = (app) => {
     });
 
     app.get('/livros', (req, res) => {
-        db.all('select * FROM livros', (erro, resultados)=>{
+        db.all('SELECT * FROM livros', (erro, resultados)=>{
 
             res.marko(
                require('../views/livros/lista/lista.marko'),
